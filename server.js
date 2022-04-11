@@ -1,17 +1,15 @@
-
 const express = require('express');
+const path = require('path');
 const app = express();
-const appName = 'trabalho-angular';
 
-const port = process.env.PORT || 4200;
+const PORT = process.env.PORT || 8080;
 
+app.use(express.static(_dirname + '/dist/login-angular'));
 
 app.get('/*', (req, res) => {
-  res.sendFile(`${outputPath}/index.html`);
+  res.sendFile(_dirname + '/dist/login-angular/index.html');
 });
 
-app.listen(port, () => {
-  console.info("Aplicacao rodando em http://localhost4200");
-
-
-});
+app.listen(PORT, () => {
+  console.log('Servidor iniciado na porta ' + PORT);
+})
