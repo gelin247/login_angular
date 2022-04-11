@@ -4,10 +4,10 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.use(express.static(_dirname + '/dist/login-angular'));
+app.use(express.static(__dirname + '/dist/login-angular'));
 
 app.get('/*', (req, res) => {
-  res.sendFile(_dirname + '/dist/login-angular/index.html');
+  res.sendFile(__dirname + '/dist/login-angular/index.html');
 });
 
 app.listen(PORT, () => {
