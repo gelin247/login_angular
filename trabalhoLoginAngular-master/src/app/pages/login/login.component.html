@@ -1,0 +1,45 @@
+
+<div class="conteudo-login">
+  <form class="conteudo-form" [formGroup]= "loginForm" (submit)="submitLogin()">
+
+    <!--logo do nome do projeto, ou nome do site-->
+
+    <div class="logo">
+      CADASTRO DE TIMES
+    </div>
+
+    <!-- validação do email -->
+
+    <div>
+      <input [(ngModel)]="usuario.nome" class="input-login" placeholder="email" formControlName="email">
+    </div>
+
+    <div class="msg-erro" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.errors?.['touched']">
+      Campo de email obrigatório!
+    </div>
+
+    <div class="msg-erro" *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.errors?.['touched']">
+      Formato do email não é válido!
+    </div>
+
+    <!-- validação da senha-->
+
+    <div>
+      <input [(ngModel)]="usuario.senha" class="input-login" type="password" placeholder="senha" formControlName="senha">
+    </div>
+
+    <div class="msg-erro" *ngIf="loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.errors?.['touched']">
+      Campo de senha obrigatório!
+    </div>
+
+    <!--botão para aceitar a entrada no site-->
+
+    <div>
+      <button
+      (click)="fazerLogin()" class="input-submit" [disabled]="!loginForm.valid">Logar</button>
+      <button
+      (click)="criarLogin()" class="input-submit">Criar novo usuario</button>
+    </div>
+
+  </form>
+</div>>

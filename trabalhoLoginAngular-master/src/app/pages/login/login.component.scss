@@ -1,0 +1,72 @@
+.conteudo-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+
+  .conteudo-form {
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 30px 60px 0 gray;
+    text-align: center;
+    width: 45%;
+    height: 460px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .conteudo-form:hover {
+    box-shadow: 0 30px 60px 0 rgb(8, 8, 8);
+  }
+}
+
+.input-login {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;
+  margin: 20px;
+  width: 90%;
+  border: 2px solid #f6f6f6;
+  transition: all 0.5s ease-in-out;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.msg-erro {
+  font-size: 14px;
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-submit {
+  background-color: #2c2b2c;
+  border: none;
+  color: white;
+  padding: 15px 0;
+  margin-top: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  box-shadow: 0 10px 30px 0 #413d40;
+  border-radius: 5px 5px 5px 5px;
+  transition: all 0.3s ease-in-out;
+  width: 60%;
+  cursor: pointer;
+}
+
+.logo {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  height: 80px;
+  background-color: #5a525a;
+  border: none;
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 10px 30px 0 #5f5b5f;
+  border-radius: 5px 5px 5px 5px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto;
+}

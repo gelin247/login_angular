@@ -1,0 +1,77 @@
+<!--Inicio da logo-->
+<div>
+    <nav>
+        <a class="logo">Cadastros de times</a>
+          <ul class="nav-list">
+              <li><a routerLink="" id="index">Home</a></li>
+              <li><a routerLink="/login" id="login">Login</a></li>
+              <li><a routerLink="/cadastro" id="cadastro">Cadastro</a></li>
+          </ul>
+    </nav>
+</div>
+
+<!--Inicio cadastro-->
+<div class="cadastro">
+  <h1>Cadastro de Times</h1>
+
+  <form [formGroup]="group" (ngSubmit)="saveData()">
+    <div>
+      <label>Nome do time:</label>
+      <input class="inserir-campo" type="text" formControlName="nomeTime">
+    </div>
+
+    <!--validação para o nome do time-->
+    <!-- <div class="color-error" *ngIf="name.dirty || name.touched">
+      <p *ngIf="name.errors?.['required']">
+        O campo nome é obrigatório
+      </p>
+      <p *ngIf="name.errors?.['minlength']">
+        O campo nome precisa ter no minimo 3 caracteres
+      </p>
+    </div> -->
+
+    <div>
+      <label>Estado:</label>
+      <input class="inserir-campo" type="text" formControlName="estado">
+    </div>
+
+    <input class="salvar" type="submit" value="Salvar">
+
+    <!--validação para o estado-->
+    <!-- <div class="color-error" *ngIf="name.dirty || name.touched">
+      <p *ngIf="name.errors?.['required']">
+        O campo é a sigla do estado. Ex: "SP", "RJ", "MG"
+      </p>
+
+    </div> -->
+  </form>
+</div>
+
+<!--listar os times cadastrados-->
+
+<div class="cadastro">
+  <h1>Times cadastrados</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Classificação</th>
+        <th>Time</th>
+        <th>Número de votos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of cadastroTimesList;
+        let currentIndex = index">
+        <td>{{ currentIndex + 1 }}</td>
+        <td>{{ team.nomeTime }}-{{ team.estado }}</td>
+        <td>{{ team.numeroVotos }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--Inicio rodape-->
+<div class="rodape">
+   <a>&copy; Copyright 2022 Estatísticas sobre os times</a>
+</div>
+<!--Fim rodape-->
